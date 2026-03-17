@@ -14,3 +14,6 @@ SET cantidad = 3
 WHERE id = 1;
 
 SELECT * FROM Pedidos WHERE Cantidad >= 5;
+
+ALTER TABLE Pedidos
+ADD COLUMN fecha DATE;
