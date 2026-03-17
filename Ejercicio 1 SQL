@@ -29,6 +29,9 @@ CREATE TABLE Pedidos (
 INSERT INTO Pedidos (id, cliente_id, producto, cantidad)
 VALUES (1, 1, 'Camiseta', 2);
 
+ALTER TABLE Pedidos
+ADD COLUMN fecha DATE;
+
 UPDATE pedidos
 SET cantidad = 3
 WHERE id = 1;
