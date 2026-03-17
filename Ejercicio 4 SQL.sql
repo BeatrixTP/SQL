@@ -15,7 +15,6 @@ CREATE TABLE Productos (
 ALTER TABLE Productos 
 RENAME COLUMN nombre_producto TO nºproducto;
 
-
 CREATE TABLE Pedidos (
     id INT PRIMARY KEY,
     id_usuario INT,
@@ -23,7 +22,6 @@ CREATE TABLE Pedidos (
     FOREIGN KEY (id_usuario) REFERENCES Usuarios(id),
     FOREIGN KEY (id_producto) REFERENCES Productos(id)
 );
-
 
 ALTER TABLE Productos 
 ADD COLUMN precio DECIMAL(10, 2),
@@ -58,5 +56,3 @@ ADD COLUMN cantidad INT;
 UPDATE Pedidos SET cantidad = 1 WHERE id = 1;
 UPDATE Pedidos SET cantidad = 5 WHERE id = 2;
 UPDATE Pedidos SET cantidad = 2 WHERE id = 3;
-
-
