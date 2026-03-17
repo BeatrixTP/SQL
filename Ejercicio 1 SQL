@@ -1,0 +1,53 @@
+CREATE TABLE Clientes (
+    id INT PRIMARY KEY,
+    nombre VARCHAR(255),
+    email VARCHAR(255)
+);
+
+INSERT INTO Clientes (id, nombre, email) VALUES 
+(2, 'Juan', 'juan@example.com'),
+(3, 'Ana', 'ana@example.com'),
+(4, 'Sara', 'sara@example.com'),
+(5, 'Antonio', 'antonio@example.com');
+
+UPDATE clientes
+SET email = 'juan@gmail.com'
+WHERE id = 1;
+
+SELECT * 
+FROM Clientes 
+WHERE Nombre LIKE 'A%';
+
+CREATE TABLE Pedidos (
+    id INT PRIMARY KEY,
+    cliente_id INT,
+    producto VARCHAR(255),
+    cantidad INT,
+    FOREIGN KEY (cliente_id) REFERENCES Clientes(id)
+);
+
+INSERT INTO Pedidos (id, cliente_id, producto, cantidad)
+VALUES (1, 1, 'Camiseta', 2);
+
+UPDATE pedidos
+SET cantidad = 3
+WHERE id = 1;
+
+SELECT * FROM Pedidos WHERE Cantidad >= 5;
+
+CREATE TABLE Productos (
+    id INT PRIMARY KEY,
+    nombre VARCHAR(100),
+    precio DECIMAL(10, 2)
+);
+
+INSERT INTO Productos (id, nombre, precio) VALUES
+(1, 'Bicarbonato', 1250.50),
+(2, 'Sulfatos', 25.99),
+(3, 'Percabonato', 85.00),
+(4, 'Perfume', 150.00),
+(5, 'Tensioactivos', 45.50);
+
+SELECT * 
+FROM Productos 
+WHERE precio > 50;
